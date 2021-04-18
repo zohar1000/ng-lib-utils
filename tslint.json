@@ -4,15 +4,10 @@
     "codelyzer"
   ],
   "rules": {
-    "align": {
-      "options": [
-        "parameters",
-        "statements"
-      ]
-    },
+    "align": false,
     "array-type": false,
     "arrow-return-shorthand": true,
-    "curly": true,
+    "curly": false,
     "deprecation": {
       "severity": "warning"
     },
@@ -82,10 +77,7 @@
         "named": "never"
       }
     },
-    "typedef": [
-      true,
-      "call-signature"
-    ],
+    "typedef": false,
     "typedef-whitespace": {
       "options": [
         {

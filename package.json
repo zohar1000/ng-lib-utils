@@ -1,14 +1,19 @@
 {
   "name": "ng-lib-utils",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "build:cond": "ng build ng-cond --prod",
+    "lib-utils": "node ./lib-utils.js --uglify --copy-readme --bump-version --publish"
   },
-  "private": true,
+  "private": false,
+  "homepage": "https://github.com/zohar1000/ng-lib-utils#readme",
+  "repository": "github:zoha1000/ng-lib-utils",
+  "license" : "MIT",
   "dependencies": {
     "@angular/animations": "~11.2.0",
     "@angular/common": "~11.2.0",
@@ -23,6 +28,7 @@
     "zone.js": "~0.11.3"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "~0.1102.9",
     "@angular/cli": "~11.2.0",
     "@angular/compiler-cli": "~11.2.0",
     "@types/jasmine": "~3.6.0",
@@ -35,6 +41,8 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "ng-packagr": "^11.0.0",
+    "ngx-uglifier": "^1.0.0",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",

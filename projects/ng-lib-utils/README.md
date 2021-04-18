@@ -9,7 +9,7 @@ when you build your library, usually to the 'dist' folder, that code is not ugli
 uglifying the code means shortening variable/method names.<br/>
 
 ng-lib-utils uses another package, ngx-uglifier, to uglify the code.<br/>
-in order to get a meaningful uglification, your library code needs to be written to support it, please follow the 
+in order to get a meaningful uglification, your library code needs to be written to support it, please follow the
 instructions on [ngx-uglifier](https://www.npmjs.com/package/ngx-uglifier) for that.
 
 ## copy readme.md file from the root folder to the transpiled code folder
