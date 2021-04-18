@@ -1,9 +1,9 @@
 {
   "name": "ng-lib-utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
-  "homepage": "https://github.com/zohar1000/ng-lib-utils#readme",
-  "repository": "github:zoha1000/ng-lib-utils",
+  "homepage": "https://github.com/zohar1000/ng-lib-utils",
+  "repository": "github:zohar1000/ng-lib-utils",
   "license" : "MIT",
   "dependencies": {
     "tslib": "^2.0.0"

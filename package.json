@@ -1,6 +1,6 @@
 {
   "name": "ng-lib-utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -12,7 +12,7 @@
   },
   "private": false,
   "homepage": "https://github.com/zohar1000/ng-lib-utils#readme",
-  "repository": "github:zoha1000/ng-lib-utils",
+  "repository": "github:zohar1000/ng-lib-utils",
   "license" : "MIT",
   "dependencies": {
     "@angular/animations": "~11.2.0",
