@@ -1,7 +1,13 @@
 {
   "name": "ng-lib-utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": false,
+  "decription": "helps in common routines when developing angular library, uglify, bump version, copy readme file and publish",
+  "keywords": ["angular", "library", "uglify", "bump version"],
+  "author": {
+	"name": "Zohar Sabari",
+	"email": "zohar1000@gmail.com"
+  },
   "homepage": "https://github.com/zohar1000/ng-lib-utils",
   "repository": "github:zohar1000/ng-lib-utils",
   "license" : "MIT",
