@@ -1,7 +1,7 @@
 declare var require: any;
 declare var process: any;
 const { exec } = require('child_process');
-const fs = require('fs');
+const fsPromises = require('fs').promises;
 const path = require('path');
 import { NgxUglifier, NgxUglifierConfig } from 'ngx-uglifier';
 
@@ -17,16 +17,16 @@ export class NgLibUtils {
   }
 
   async init() {
-    this.verifyDestFolder();
+    await this.verifyDestFolder();
     if (process.argv.includes('--uglify')) await this.uglify();
-    if (process.argv.includes('--copy-readme')) this.copyReadme();
-    if (process.argv.includes('--bump-version')) this.bumpVersion();
+    if (process.argv.includes('--copy-readme')) await this.copyReadme();
+    if (process.argv.includes('--bump-version')) await this.bumpVersion();
     if (process.argv.includes('--publish')) await this.publish();
   }
 
-  verifyDestFolder() {
-    this.ngxUglifier.verifyDirectory(this.config.destParentFolder);
-    this.ngxUglifier.verifyDirectory(this.destFolder);
+  async verifyDestFolder() {
+    await this.ngxUglifier.verifyDirectory(this.config.destParentFolder);
+    await this.ngxUglifier.verifyDirectory(this.destFolder);
   }
 
   async uglify() {
@@ -34,16 +34,16 @@ export class NgLibUtils {
     this.print(`${this.config.projectName} was uglified successfully`);
   }
 
-  copyReadme() {
-    const fileText = fs.readFileSync('README.md', 'utf8');
+  async copyReadme() {
+    const fileText = await fsPromises.readFile('README.md', 'utf8');
     const destFolder = path.join(this.config.destParentFolder, this.config.projectName);
-    fs.writeFileSync(path.join(destFolder, 'README.md'), fileText, 'utf8');
+    await fsPromises.writeFile(path.join(destFolder, 'README.md'), fileText, 'utf8');
     this.print(`README.md file was successfully copied from root folder to ${destFolder}`);
   }
 
-  bumpVersion() {
-    const updateVersion = (filePath, version?) => {
-      let fileText = fs.readFileSync(filePath, 'utf8');
+  async bumpVersion() {
+    const updateVersion = async (filePath, version?) => {
+      let fileText = await fsPromises.readFile(filePath, 'utf8');
       const fileJson = JSON.parse(fileText);
       if (!version) {
         const versionTokens = fileJson.version.split('.');
@@ -52,12 +52,12 @@ export class NgLibUtils {
       }
       fileJson.version = version;
       fileText = JSON.stringify(fileJson, null, 2);
-      fs.writeFileSync(filePath, fileText, 'utf8');
+      await fsPromises.writeFile(filePath, fileText, 'utf8');
       return version;
     };
     const newVersion = updateVersion('package.json');
     const destFolder = path.join(this.config.destParentFolder, this.config.projectName);
-    updateVersion(path.join(destFolder, 'package.json'), newVersion);
+    await updateVersion(path.join(destFolder, 'package.json'), newVersion);
     this.print(`version in package.json files was successfully updated to ${newVersion} in root folder and ${destFolder} folder`);
   }
 

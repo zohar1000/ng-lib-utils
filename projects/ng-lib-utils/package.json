@@ -1,6 +1,6 @@
 {
   "name": "ng-lib-utils",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "private": false,
   "decription": "helps in common routines when developing angular library, uglify, bump version, copy readme file and publish",
   "keywords": ["angular", "library", "uglify", "uglifier", "uglification", "bump version"],

@@ -1,6 +1,6 @@
 {
   "name": "ng-lib-utils",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "build:cond": "ng build ng-cond --prod",
-    "lib-utils": "node ./lib-utils.js --uglify --copy-readme --bump-version --publish"
+    "test:build": "node ./lib-utils.js --uglify --copy-readme",
+    "test:publish": "node ./lib-utils.js --uglify --copy-readme --bump-version --publish"
   },
   "private": false,
   "decription": "helps in common routines when developing angular library, uglify, bump version, copy readme file and publish",
