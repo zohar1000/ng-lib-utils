@@ -65,7 +65,7 @@ After running this line:
 * the readme.md file will be copied
 * the version number in package.json will be bumped
 * your library will be published
-<br/><br/>
+  <br/><br/>
 
 #### config object interface
 The config object has the interface of *NgxUglifierConfig* and is described at [ngx-uglifier](https://www.npmjs.com/package/ngx-uglifier).

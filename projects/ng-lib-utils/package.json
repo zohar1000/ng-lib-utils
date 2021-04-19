@@ -1,9 +1,9 @@
 {
   "name": "ng-lib-utils",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": false,
   "decription": "helps in common routines when developing angular library, uglify, bump version, copy readme file and publish",
-  "keywords": ["angular", "library", "uglify", "bump version"],
+  "keywords": ["angular", "library", "uglify", "uglifier", "uglification", "bump version"],
   "author": {
 	"name": "Zohar Sabari",
 	"email": "zohar1000@gmail.com"
@@ -13,5 +13,8 @@
   "license" : "MIT",
   "dependencies": {
     "tslib": "^2.0.0"
+  },
+  "peerDependencies": {
+	"ngx-uglifier": "1.x"
   }
 }
