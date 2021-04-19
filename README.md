@@ -49,7 +49,7 @@ create a script in your root folder.<br/>
 const NgLibUtils = require('ng-lib-utils');
 
 const config = { projectName: 'my-lib' };
-const ngLibUtils = new NgLibUtils(config);
+const ngLibUtils = new NgLibUtils.NgLibUtils(config);
 ngLibUtils.init().then();
 ```
 
