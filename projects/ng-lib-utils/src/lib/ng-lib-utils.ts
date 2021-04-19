@@ -55,7 +55,7 @@ export class NgLibUtils {
       await fsPromises.writeFile(filePath, fileText, 'utf8');
       return version;
     };
-    const newVersion = updateVersion('package.json');
+    const newVersion = await updateVersion('package.json');
     const destFolder = path.join(this.config.destParentFolder, this.config.projectName);
     await updateVersion(path.join(destFolder, 'package.json'), newVersion);
     this.print(`version in package.json files was successfully updated to ${newVersion} in root folder and ${destFolder} folder`);
